@@ -227,9 +227,11 @@ async def main():
         f"{endpoint}tg-invoices", headers=headers, json=data
     ).json()["data"]["link"]
     buttons = [
-        [Button.url("🔴", short_link)],
-        [Button.url("🟡", zero_link)],
-        [Button.url("🟢", long_link)],
+        [
+            Button.url("🔴", short_link),
+            Button.url("🟡", zero_link),
+            Button.url("🟢", long_link)
+        ],
     ]
 
     global bet_time, waiting_time, current_ton_price
